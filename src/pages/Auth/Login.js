@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import InputField from '../../components/forms/InputField'
+import { useDispatch } from 'react-redux'
+import { setupLogin } from '../../store/reducers/userReducers'
 import { api } from '../../plugins/axios'
 
-
 const Login = () => {
-  // const [email, setEmail] = useState('hasib6@test.com')
-  // const [password, setPassword] = useState('123456')
+  const dispatch = useDispatch()
 
   const [form, setForm] = useState({
     email: "hasib6@test.com",
@@ -15,9 +15,10 @@ const Login = () => {
   const submitForm = async () => {
     try {
       const res = await api.post('user/login', form)
-      console.log(res)
+
+      dispatch(setupLogin({ loggedIn: true, user: res.data.user, token: res.data.token }))
     } catch (error) {
-      console.log(error)
+      // 
     }
   }
 
