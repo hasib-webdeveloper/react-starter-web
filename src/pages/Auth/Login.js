@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import InputField from '../../components/forms/InputField'
 import { api } from '../../plugins/axios'
 
-const submitForm = async () => {
-  try {
-    const res = await api.post('user/login', {})
-    console.log(res)
-  } catch (error) {
-    console.log(error)
-  }
-}
 
 const Login = () => {
+  // const [email, setEmail] = useState('hasib6@test.com')
+  // const [password, setPassword] = useState('123456')
+
+  const [form, setForm] = useState({
+    email: "hasib6@test.com",
+    password: "123456"
+  })
+
+  const submitForm = async () => {
+    try {
+      const res = await api.post('user/login', form)
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className='container'>
       <div className="row">
@@ -21,8 +31,8 @@ const Login = () => {
             </div>
 
             <div className='card-body'>
-              Input
-              Input
+              <InputField value={form} setValue={setForm} fieldName="email" placeholder="Phone or Email" />
+              <InputField value={form} setValue={setForm} fieldName="password" type="password" className="mt-2" placeholder="Your Password" />
             </div>
 
             <div className="card-footer d-flex justify-content-end">
