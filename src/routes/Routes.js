@@ -1,7 +1,8 @@
 import HomePage from '../pages/Home/Index'
-import ProfilePage from '../pages/Profile/Index'
-import LoginPage from '../pages/Auth/Login'
-import AboutPage from '../pages/About'
+import Profile from '../pages/Profile/Index'
+import Login from '../pages/Auth/Login'
+import Signup from '../pages/Auth/Signup'
+import About from '../pages/About'
 import NotFound from '../pages/NotFound'
 
 import DefaultLayout from '../components/layouts/DefaultLayout'
@@ -18,9 +19,10 @@ const index = () => {
     <Routes>
       <Route path="/" element={<DefaultLayout />} >
         <Route index element={<HomePage />} />
-        <Route path="about" element={<AboutPage />} />
-        <Route path="profile" element={<ProfilePage />} />
-        <Route path="login" element={<LoginPage />} />
+        <Route path="about" element={<About />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 
