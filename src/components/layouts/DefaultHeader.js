@@ -1,4 +1,5 @@
 import { Link, useResolvedPath, useMatch } from 'react-router-dom'
+import { ReactComponent as Logo } from '../../logo.svg'
 
 const CustomLink = ({ to, children, ...props }) => {
   const resolvePath = useResolvedPath(to)
@@ -17,7 +18,7 @@ const DefaultHeader = () => {
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <Link to="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"></svg>
+            <Logo />
           </Link>
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">

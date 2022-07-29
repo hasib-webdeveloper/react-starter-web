@@ -1,12 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import DefaultHeader from './DefaultHeader'
 
-const DefaultLayout = (props) => {
+const AdminLayout = (props) => {
   return (
     <>
-      <DefaultHeader />
-
+      <header>Admin Header</header>
 
       <main>
         <Outlet />
@@ -15,4 +13,4 @@ const DefaultLayout = (props) => {
   )
 }
 
-export default DefaultLayout
+export default AdminLayout
