@@ -1,4 +1,5 @@
 // import DefaultHeader from './components/layouts/DefaultHeader'
+import React from 'react'
 import Routes from './routes/Routes'
 
 import './styles/App.scss'

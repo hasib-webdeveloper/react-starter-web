@@ -21,6 +21,8 @@ export const userSlice = createSlice({
 })
 export const { updateUser, setState } = userSlice.actions
 
+export const getLoggedIn = (state) => state.user.loggedIn
+
 export const setupLogin = ({ loggedIn, user, token }) => dispatch => {
   localStorage.setItem('auth_token', token)
   dispatch(updateUser({ loggedIn, user }))
@@ -28,8 +30,6 @@ export const setupLogin = ({ loggedIn, user, token }) => dispatch => {
 
 export const initUser = () => async dispatch => {
   if (!localStorage.getItem('auth_token')) return
-
-  console.log(userSlice.getInitialState().loggedIn)
 
   try {
     dispatch(setState({ field: 'loading', data: true }))
