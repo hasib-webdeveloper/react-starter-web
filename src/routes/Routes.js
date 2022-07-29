@@ -2,6 +2,7 @@ import HomePage from '../pages/Home/Index'
 import ProfilePage from '../pages/Profile/Index'
 import LoginPage from '../pages/Auth/Login'
 import AboutPage from '../pages/About'
+import NotFound from '../pages/NotFound'
 
 import {
   Routes,
@@ -15,6 +16,7 @@ const index = () => {
       <Route path="about" element={<AboutPage />} />
       <Route path="profile" element={<ProfilePage />} />
       <Route path="login" element={<LoginPage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
